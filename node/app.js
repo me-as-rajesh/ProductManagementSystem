@@ -11,14 +11,13 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.use(express.static('./uploads'))
-
+//mongo db
 mongoose.connect('mongodb://127.0.0.1:/ProductManagement', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
 .then(() => console.log("MongoDB connected successfully"))
 .catch((err) => console.log(err));
-
 
 app.use('/', router)
 
